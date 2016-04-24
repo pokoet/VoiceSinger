@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href=""><img src="/img/voice_singer_logo.svg" width="100" height="50"></a>
+				<a class="navbar-brand" href="/"><img src="/img/voice_singer_logo.svg" width="100" height="50"></a>
 	        </div>
 			<ul class="nav navbar-nav navbar-actions navbar-left">
 				<li><a href="ui-buttons.html#" id="main-menu-toggle"><i class="fa fa-home"></i></a></li>
@@ -132,7 +132,7 @@
 							{{#if Issinger}}
 								{{#esEach index="singer"}}
 									<li class="list-group-item clearfix">
-									<a href="/musicdetail/{{_id}}">
+									<a href="{{pathFor 'musicdetail' _id}}" id="reload">
 									  <div class="pull-left w-40 m-r">
 										<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
 									  </div>
@@ -158,7 +158,7 @@
 							{{else}}
 								{{#each allsinger}}
 									<li class="list-group-item clearfix">
-									<a href="/musicdetail/{{_id}}">
+									<a href="{{pathFor 'musicdetail' _id}}" id="reload">
 									  <div class="pull-left w-40 m-r">
 										<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
 									  </div>
@@ -325,12 +325,12 @@
 
 								<li>
 									<div class="author">
-										<img src="/img/singer/khemarak-sreypov.jpg" alt="avatar">
+										<img src="" alt="avatar" class="mp3image">
 									</div>
 
-									<div class="name">បងចូលចិត្តតែ Brand Brand (សុគន្ធ កញ្ញា)​​​ RHM 553</div>
+									<div class="name mp3title"></div>
 									<div class="date">03:58</div>
-									<div class="delete"><i class="fa fa-pause"></i></div>
+									<div class="delete"><i class="fa fa-pause" id="currentplay"></i></div>
 									
 									<div class="message">
 										<div class="progress thin">
@@ -351,14 +351,15 @@
 											</div>
 										</div>
 									</div>	
-
-									<ul>
+									<audio src="" id="audio" preload="auto" tabindex="0" autoplay type="audio/mpeg"></audio>
+									<ul id="playlist">
 										{{#each musicplay}}
-										<li>
-											<div class="name">{{title}}</div>
-											<div class="date">Today, 1:08 PM</div>
-											<div class="delete"><i class="fa fa-play"></i></div>
-											
+										<li class="listmp">
+											<a href="#" class="play" data-src="{{srcmusic}}" data-title="{{title}}" data-image="{{parthImage singerid}}">
+												<div class="name">{{title}}</div>
+												<div class="date">Today, 1:08 PM</div>
+												<div class="delete"><i class="fa fa-music"></i></div>
+											</a>
 											<div class="message">
 												<div class="btn-group">												
 													<button type="button" class="btn btn-link"><i class="fa fa-picture-o"></i> <span style="color:#ccc">{{getproname production}}</span></button>
@@ -452,4 +453,10 @@
 			 <!--end: Content -->
 		</div>
 	</div>
+	<script type="text/javascript">
+		// (function (window) {
+		// 	//alert('start');
+			
+		// })(window);
+	</script>
 </template>

@@ -132,7 +132,7 @@
 							{{#if Issinger}}
 								{{#esEach index="singer"}}
 									<li class="list-group-item clearfix">
-									<a href="{{pathFor 'musicdetail' _id}}" id="reload">
+									<a href="/musicdetail/{{_id}}" id="reload">
 									  <div class="pull-left w-40 m-r">
 										<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
 									  </div>
@@ -158,7 +158,7 @@
 							{{else}}
 								{{#each allsinger}}
 									<li class="list-group-item clearfix">
-									<a href="{{pathFor 'musicdetail' _id}}" id="reload">
+									<a href="/musicdetail/{{_id}}" id="reload">
 									  <div class="pull-left w-40 m-r">
 										<img src="/img/singer/{{image}}" alt="..." class="w-full img-circle">
 									  </div>
@@ -454,9 +454,9 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		// (function (window) {
-		// 	//alert('start');
-			
-		// })(window);
+		// $(document).on('pagebeforeshow', '#playlist' ,function(){
+		//     // Code goes here
+		//     alert("reload")
+		// });
 	</script>
 </template>

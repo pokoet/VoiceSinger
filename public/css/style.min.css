@@ -265,7 +265,7 @@ blockquote.pull-right {
   height: 60px;
   border: none;
   border-bottom: 1px solid #e1e6ef;
-  background: #f2f4f8;
+  background: #374767;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
@@ -273,7 +273,7 @@ blockquote.pull-right {
   line-height: 60px;
 }
 .navbar .navbar-brand {
-  background: #f2f4f8;
+  background: #374767;
   text-align: center;
   color: white;
   height: 60px;
@@ -326,7 +326,7 @@ blockquote.pull-right {
   position: relative;
 }
 .navbar .navbar-nav li a:hover {
-  background: #f5f7fa;
+  background: transparent;
 }
 .navbar .navbar-nav li a i {
   /*border: 1px solid #c0cadd;*/
@@ -337,6 +337,9 @@ blockquote.pull-right {
   -moz-border-radius: 50em;
   border-radius: 50em;
   color: #c0cadd;
+}
+.navbar .navbar-nav li a i:hover{
+	color:#fff;
 }
 .navbar .navbar-nav li a .badge {
   background: #ff5454;
@@ -353,14 +356,14 @@ blockquote.pull-right {
 }
 .navbar .navbar-nav li .dropdown-toggle:active,
 .navbar .navbar-nav li .open .dropdown-toggle:active {
-  background-color: #f5f7fa !important;
+  background-color: transparent !important;
 }
 .navbar .navbar-nav li .dropdown-toggle.avatar img {
   height: 40px;
-  -webkit-border-radius: 50em;
-  -moz-border-radius: 50em;
-  border-radius: 50em;
-  border: 1px solid #c0cadd;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #fff;
   margin-top: -4px;
 }
 .navbar .navbar-nav li .dropdown-toggle.avatar .badge {
@@ -484,7 +487,7 @@ blockquote.pull-right {
   top: 20px;
 }
 .navbar .navbar-nav .open a:focus {
-  background-color: #f2f4f8;
+  background-color: transparent;
 }
 .navbar .navbar-form {
   margin: 0;
@@ -1281,7 +1284,9 @@ body.modal-open,
   background-color: #ff5454;
 }
 .progress.thin {
-  height: 10px;
+  height: 47.15px;
+  margin-bottom:0px;
+  margin-top:-47px;
 }
 .progress.thin .progress-bar {
   font-size: 6px;
@@ -2046,9 +2051,9 @@ ul.stats li .bgchart {
 }
 .discussions ul li .author img {
   height: 50px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 .discussions ul li .name {
   /*position: absolute; padding: 5px 10px 5px 10px;*/
@@ -2061,16 +2066,16 @@ ul.stats li .bgchart {
 .discussions ul li .date {
   position: absolute;
   top: 10px;
-  right: -1px;
+  right: 8px;
   z-index: 1;
-  background: #e1e6ef;
+  background: transparent;
   padding: 15px;
 }
 .discussions ul li .delete {
   position: absolute;
   background: #e1e6ef;
   top: 10px;
-  right: -30px;
+  right: -40px;
   padding: 15px;
   display: inline-block;
   cursor: pointer;
@@ -2089,7 +2094,7 @@ ul.stats li .bgchart {
   -moz-box-shadow: none;
   box-shadow: none;
   border: none;
-  border-bottom: 1px solid #e1e6ef;
+  border-bottom: 0px solid #e1e6ef;
   margin: 0 -10px;
   /*padding-left: 70px;*/
   padding-bottom:0px;
@@ -2112,6 +2117,9 @@ ul.stats li .bgchart {
 }
 .discussions ul li ul li .name {
   /*left: 70px;*/
+}
+.discussions ul li ul li .name:hover {
+  background:#eaedf5;
 }
 .discussions ul li ul li .date {
   background: transparent;

@@ -9,7 +9,7 @@ Template.musicdetail.rendered=function(){
 		$(".mp3image").attr("src",image);
 		var myaudio = $("audio")[0];
 		var cur_time = myaudio.currentTime;
-		//alert(cur_time);
+		alert(cur_time);
 		var play = $("ul#playlist li a:first").attr("data-src");
 		$("#audio").attr("src",play);
 		var audio;
@@ -61,7 +61,7 @@ Template.musicdetail.rendered=function(){
 		        audio[0].load();
 		        audio[0].play();
 		}		
-}
+};
 Template.musicdetail.helpers({
 	allsinger:function(){
 		var result = singer.find();

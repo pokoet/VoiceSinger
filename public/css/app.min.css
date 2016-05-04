@@ -49,3 +49,16 @@ a, a:link, a:visited, a:hover, a:active{text-decoration:none}
 .message i.fa{
 	color:#ccc;
 }
+.navbar .navbar-nav li a i.like{color:red;}
+.modal-body-left .hidediv{display: none}
+#progressBar { 
+	border:1px solid #aaa; 
+	color:#fff; 
+	width:295px; 
+	height:20px;
+}
+#progress123 {
+	background-color:#ff0000;
+	height:20px;
+	display:inline-block;
+}

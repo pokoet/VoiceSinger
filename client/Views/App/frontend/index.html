@@ -29,10 +29,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <br>
-			<br>
             <h1 class="text-danger" style="margin-bottom:10px">
-				<a href="/"><img src="/img/voice_singer_logo.svg" width="250" height="100"></a>
+				<a href="/"><img src="/img/logo_somleng.svg" width="220" height="220"></a>
             </h1>
             <div class="col-md-6 col-md-offset-3">
 			<form class="search" role="search">
@@ -44,16 +42,25 @@
                 </span>
               </div>
 			</form>
+				<h4>{{countSinger}}</h4>
 				<br>
-				<h4>{{countSinger}} Singer </h4>
-				
 				<ul class="list-inline">
-					<li class="active"><a href="/"><button type="button" class="btn btn-default btn-sm">All</button></a></li>
-					<li><a href="/artist/male">Men</a></li>
-					<li><a href="/artist/female">Women</a></li>
+					<li class="active">
+						<a href="#">
+							<button id='all' type="button" class="btn btn-default btn-sm">All</button>
+						</a>
+					</li>
+					<li class="men">
+						<a href="#">
+						<button id='men' type="button" class="btn btn-sm">
+						Men</button></a>
+					</li>
+					<li class="women">
+						<a href="#">
+						<button id='women' type="button" class="btn btn-sm">
+						Women</button></a>
+					</li>
 				</ul>
-				<br>
-				
 				<br>
               
             </div>
@@ -72,13 +79,13 @@
 				
 				  <div class="col-sm-6 col-md-2">              
 					<div class="thumbnail">
-						<a href="/musicdetail/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
+						<a href="/playlist/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
 						<div class="text-center">	
 							<h5 class="text-muted">{{singernamekh}}</h5>
 							<h5>{{singername}}</h5>						
 							<p class="caption">
-								<a href="#" class="pull-left"><i class="fa fa-music"></i> {{numMusic _id}}</a> 
-								<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> 5436</a>
+								<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
+								<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countfavorite _id}}</a>
 							</p>						
 						</div>
 					</div>      
@@ -99,20 +106,20 @@
 				<!-- /result search singer -->	
 			{{else}}
 				{{#each getSinger}}
-				  <div class="col-sm-6 col-md-2">              
-					<div class="thumbnail">
-						<a href="/musicdetail/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
-						<div class="text-center">	
-							<h5 class="text-muted">{{singernamekh}}</h5>
-							<h5>{{singername}}</h5>						
-							<p class="caption">
-								<a href="#" class="pull-left"><i class="fa fa-music"></i> {{numMusic _id}}</a> 
-								<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> 5436</a>
-							</p>						
-						</div>
-					</div>      
-				  </div>
-				  {{/each}}
+					<div class="col-sm-6 col-md-2">              
+						<div class="thumbnail">
+							<a href="/playlist/{{_id}}"><img src="/img/singer/{{image}}" alt="" width="225" height="225" class="img-responsive"></a>
+							<div class="text-center">	
+								<h5 class="text-muted">{{singernamekh}}</h5>
+								<h5>{{singername}}</h5>						
+								<p class="caption">
+									<a href="#" class="pull-left"><i class="fa fa-music"></i> {{Countmp3 _id}}</a> 
+									<a href="#" class="pull-right"><i class="fa fa-thumbs-o-up"></i> {{Countfavorite _id}}</a>
+								</p>						
+							</div>
+						</div>      
+					</div>
+				{{/each}}
 			{{/if}}
             </div>
 			<!-- /row -->

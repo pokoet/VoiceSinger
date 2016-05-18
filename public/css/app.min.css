@@ -35,7 +35,7 @@ a, a:link, a:visited, a:hover, a:active{text-decoration:none}
 .list-group.no-borders .list-group-item {
     border: 0;
 	padding:10px 0px;
-	background-color: #f2f4f8;
+	background-color: #fff;
 	padding-left: 15px;
 }
 .list-group.no-borders .list-group-item:hover {
@@ -49,7 +49,7 @@ a, a:link, a:visited, a:hover, a:active{text-decoration:none}
 .message i.fa{
 	color:#ccc;
 }
-.navbar .navbar-nav li a i.like{color:red;}
+.navbar .navbar-nav li a i.like{color:#ec2327;}
 .modal-body-left .hidediv{display: none}
 #progressBar { 
 	border:1px solid #aaa; 
@@ -62,3 +62,16 @@ a, a:link, a:visited, a:hover, a:active{text-decoration:none}
 	height:20px;
 	display:inline-block;
 }
+.thumbnail:hover{
+	border: 1px solid #ec2327;
+}
+.thumbnail .caption a{
+	color:#222;
+}
+.thumbnail .caption a i{
+	color:#ec2327;
+}
+.rightside{
+	margin-bottom: 10px;
+}
+.nonelike{display: none}

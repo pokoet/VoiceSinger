@@ -43,14 +43,14 @@
 =================================================================== */
 body {
   color: #374767;
-  background: #f2f4f8;
+  background: #fff;
 }
 a {
-  color: #1985ac;
+  color: #222;
 }
 a:hover,
 a a:focus {
-  color: #167495;
+  color: #E3311C;
 }
 h1 {
   font-size: 32px;
@@ -87,8 +87,8 @@ hr {
   border-top: 1px solid #f2f4f8;
 }
 .main {
-  background: #f2f4f8;
-  padding: 30px 30px 0 30px;
+  background: #fff;
+  padding: 15px 30px 0 30px;
 }
 .main.full {
   width: 100%;
@@ -265,7 +265,7 @@ blockquote.pull-right {
   height: 60px;
   border: none;
   border-bottom: 1px solid #e1e6ef;
-  background: #374767;
+  background: #212121;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
@@ -273,7 +273,7 @@ blockquote.pull-right {
   line-height: 60px;
 }
 .navbar .navbar-brand {
-  background: #374767;
+  background: #BD0000;
   text-align: center;
   color: white;
   height: 60px;
@@ -283,7 +283,7 @@ blockquote.pull-right {
   border-bottom: 1px solid  #e1e6ef;
 }
 .navbar .navbar-brand img {
-  margin: -5px 10px 0 0;
+  margin: -1px 15px 10px 15px;
   height: 60px;
   opacity: 1;
 }
@@ -302,23 +302,31 @@ blockquote.pull-right {
 }
 .navbar .navbar-form {
   border-right: 0px solid #e1e6ef;
+  position: relative;
 }
 .navbar .navbar-form i {
-  color: #c0cadd;
-  font-size: 16px;
-  margin-top: 5px;
+  color: #212121;
+  font-size: 20px;
+  margin-top: 0px;
 }
 .navbar .navbar-form input[type=text] {
-  border: 1px solid #c0cadd;
+  border: 1px solid #fff;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  margin-top: -5px;
+  margin-top: 5px;
   /*margin-left: -20px;*/
   padding-left: 15px;
   background: #fff;
-  width: 500px;
+  width: 480px;
   color: #374767;
+}
+.navbar .navbar-form .input-group-btn{
+  line-height: 50px;
+}
+.navbar .navbar-form .input-group-btn .header-search{
+  padding: 6px 12px;
+  margin-top: -6px;
 }
 .navbar .navbar-nav li a {
   padding: 0 10px;
@@ -336,13 +344,13 @@ blockquote.pull-right {
   -webkit-border-radius: 50em;
   -moz-border-radius: 50em;
   border-radius: 50em;
-  color: #c0cadd;
+  color: #fff;
 }
 .navbar .navbar-nav li a i:hover{
 	color:#fff;
 }
 .navbar .navbar-nav li a .badge {
-  background: #ff5454;
+  background: #ec2327;
   border: 2px solid white;
   position: absolute;
   top: 9px;
@@ -363,7 +371,7 @@ blockquote.pull-right {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  border: 1px solid #fff;
+  border: 0px solid #fff;
   margin-top: -4px;
 }
 .navbar .navbar-nav li .dropdown-toggle.avatar .badge {
@@ -503,7 +511,7 @@ blockquote.pull-right {
 .sidebar:before {
   position: absolute;
   content: '';
-  background: #f2f4f8;
+  background: #fff;
   width: 100%;
   height: 10000px;
   left: 0;
@@ -670,9 +678,9 @@ blockquote.pull-right {
   margin-top: 2px;
 }
 .btn-default {
-  color: #374767;
-  background: #e1e6ef;
-  border: 1px solid #e1e6ef;
+  color: #FFF;
+  background: #ec2327;
+  border: 1px solid #ec2327;
 }
 .btn-default:hover,
 .btn-default.disabled,
@@ -925,7 +933,7 @@ blockquote.pull-right {
   margin-left: 0px;
 }
 .form-control {
-  border: 1px solid #e1e6ef;
+  border: 1px solid #ec2327;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1269,7 +1277,7 @@ body.modal-open,
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #20a8d8;
+  background-color: #E3311C;
 }
 .progress .progress-bar.progress-bar-success {
   background-color: #79c447;
@@ -1284,9 +1292,9 @@ body.modal-open,
   background-color: #ff5454;
 }
 .progress.thin {
-  height: 47.15px;
+  height: 5px;/*47.15px;*/
   margin-bottom:0px;
-  margin-top:-47px;
+  margin-top:-5px;/*-47.15px;*/
 }
 .progress.thin .progress-bar {
   font-size: 6px;
@@ -1720,8 +1728,8 @@ canvas.chartjs {
   background: white;
   position: relative;
   text-align: right;
-  margin-bottom: 30px;
-  height: 70px;
+  margin-bottom: 0px;
+  height: 52px;
   border: 1px solid #e1e6ef;
 }
 .smallstat .linechart-overlay,
@@ -1820,16 +1828,19 @@ canvas.chartjs {
 .smallstat i {
   text-align: center;
   display: block;
-  color: #374767;
-  width: 100px;
-  height: 68px;
+  color: #212121;
+  width: 50px;
+  height: 50px;
   font-size: 22px;
-  line-height: 68px;
+  line-height: 50px;
   float: left;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 .smallstat i.blue {
   background: #36a9e1;
+}
+.smallstat i.black {
+  background: #F2F4F8;
 }
 .smallstat i.lightBlue {
   background: #67c2ef;
@@ -1865,14 +1876,13 @@ canvas.chartjs {
   text-align: center;
 }
 .smallstat .value {
-  padding-top: 16px;
+  padding-top: 5px;
   font-size: 16px;
+  color:#E3311C;
 }
 .smallstat .title {
-  color: #c0cadd;
+  color: #212121;
   font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 /* Box Stats
 =================================================================== */

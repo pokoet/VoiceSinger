@@ -4,5 +4,8 @@ Meteor.methods({
 	},
 	Unfavorite:function(musicid,userid){
 		favorite.remove({musicId:musicid,userId:userid});
+	},
+	CountComment:function(mId){
+		return review.find({'musicId':mId}).count();
 	}
 })

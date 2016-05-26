@@ -1,3 +1,4 @@
+
 Template.leftsinger.helpers({
 	Issinger:function(){
 		var singersidebar = Session.get("searchsingersidebar");
@@ -9,7 +10,6 @@ Template.leftsinger.helpers({
 		return result;
 	},
 	Songnum:function(id){
-		console.log("ID====="+id);
 		return musics.find({'singerid':id}).count();
 	}
 });
@@ -44,5 +44,9 @@ Template.leftsinger.events({
 			Session.set("searchsingersidebar","test");
 		else
 			Session.set("searchsingersidebar", undefined);
+	},
+	'focusout .search':function(e){
+		e.preventDefault();
+		$('.search input').val('');
 	}
 });

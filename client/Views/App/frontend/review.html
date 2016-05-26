@@ -1,0 +1,28 @@
+<template name="review">
+	<div id="comment_music" class="modal fade" role="dialog">
+	  	<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  	<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+					<p id="errormsg" style="color:red"></p>
+			  	</div>
+			  	<div class="modal-body">
+					<textarea class="form-control" rows="3" id="comment" placeholder="Enter your comment..."></textarea>
+			  	</div>
+			  	<div>
+			  		{{#each getcomment}}
+			  			<b>User: {{commentUser userId}}</b>
+			  			<p>{{text}}</p>
+			  		{{/each}}
+			  	</div>
+			  	<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" id="send">Send</button>
+			  	</div>
+			</div>
+	  	</div>
+	</div>
+</template>

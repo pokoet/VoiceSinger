@@ -4,6 +4,7 @@ accounts-ui@1.1.5
 accounts-ui-unstyled@1.1.7
 alanning:roles@1.2.13
 aldeed:template-extension@3.4.3
+amplify@1.0.0
 autoupdate@1.2.1
 babrahams:editable-json@0.4.3
 base64@1.0.3
@@ -83,6 +84,7 @@ srp@1.0.3
 templating@1.1.1
 tracker@1.0.7
 twbs:bootstrap@3.3.5
+u2622:persistent-session@0.4.4
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4

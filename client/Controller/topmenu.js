@@ -1,5 +1,5 @@
 Template.topmenu.events({
-	"click .currentlike":function(){
+	"click #currentlike":function(){
 		var user = Meteor.userId();
 		var singerId = Session.get("GETSINGER-ID");
 		//alert(singerId);
@@ -26,7 +26,7 @@ Template.topmenu.events({
 			});
 		}
 	},
-	"click .currentunlike":function(){
+	"click #currentunlike":function(){
 		//var id = this._id;
 		var user = Meteor.userId();
 		var singerId = Session.get("GETSINGER-ID");
@@ -89,26 +89,14 @@ Template.topmenu.events({
 		Session.set('SEARCH_KEY',key);
 		//var id = Session.get("GETSINGER-ID");
 		$('#singerresult').html('');
+		$('#singerval').val('');
 		Router.go('/playlist/search/'+slug);
-	},
-	"focusout #singerval":function(e){
-		e.preventDefault();
-		//$('#singerval').val('');
-		//$('#singerresult').html('');
-	},
-	Getfavorite:function(){
-		var user = Meteor.userId();
-		return favorite.find({userId:user});
-	},
-	MusicTitle:function(id){
-		var result = musics.findOne({_id:id}).title;
-		return result;
 	}
 });
 Template.topmenu.helpers({
 	GetMusicFavorite:function(){
 		var user = Meteor.userId();
-		return favorite.find({userId:user});
+		return favorite.find({userId:user},{limit:5});
 	},
 	SingerImage:function(singerId){
 		var result = singer.findOne({_id:singerId}).image;
@@ -131,5 +119,25 @@ Template.topmenu.helpers({
 	numfavorite:function(){
 		var user = Meteor.userId();
 		return favorite.find({userId:user}).count();
+	},
+	Islike:function(){
+		var singerId = Session.get("GETSINGER-ID");
+		var user = Meteor.userId();
+		var mylike = like.findOne({singerId:singerId,userId:user,status:'like'});
+		if(mylike !== undefined){
+			return true;
+		}else{
+			return false;
+		}
+	},
+	Isunlike:function(){
+		var singerId = Session.get("GETSINGER-ID");
+		var user = Meteor.userId();
+		var mylike = like.findOne({singerId:singerId,userId:user,status:'unlike'});
+		if(mylike !== undefined){
+			return true;
+		}else{
+			return false;
+		}
 	}
 });

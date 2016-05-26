@@ -29,29 +29,6 @@ Template.listsearch.helpers({
 		console.log("MYDUR="+durmins);
 		console.log("MYSEC="+dursecs);
 		return durmins+":"+dursecs;
-	},
-	Countmp3:function(){
-		var singerId = Session.get("SINGER-ID");
-		//var singerId = singer.findOne({'singername':name})._id;
-		return musics.find({singerid:singerId}).count();
-	},
-	Countlike:function(){
-		return like.find({status:'like'}).count();
-	},
-	Countunlike:function(){
-		return like.find({status:'unlike'}).count();
-	},
-	Getview:function(){
-		var id = Session.get("SINGER-ID");
-		Meteor.call("Countview",id,function(error,result){
-			if(error){
-				console.log("Countview Problem"+error.reason);
-			}else{
-				console.log("Countview Successfully");
-				Session.set("COUNT-VIEW",result);
-			}
-		});
-		return Session.get("COUNT-VIEW");
 	}
 });
 Template.listsearch.events({

@@ -18,3 +18,4 @@ mrt:fs
 http
 cfs:gridfs
 matteodem:easy-search
+u2622:persistent-session

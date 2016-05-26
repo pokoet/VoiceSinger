@@ -22,11 +22,11 @@
 						</li>
 						{{#each GetMusicFavorite}}
 							<li class="avatar">
-								<a href="ui-buttons.html#">
+								<a href="/favorite" id='curfav1' data-favid="{{musicId}}">
 									<img src="/img/singer/{{SingerImage singerId}}">
 									<div>{{Titilename musicId}}</div>
 									<small>{{getAlbum musicId}} - {{getVol musicId}}</small>
-									<span class="label label-info">NEW</span>
+									<span class="label label-info">Play Now</span>
 								</a>
 							</li>
 						{{/each}}
@@ -70,9 +70,37 @@
 				<!--<li><a href="ui-buttons.html#"><i class="fa fa-bars"></i></a></li>-->
 			</ul>
 			<ul class="nav navbar-nav">				
-				<li><a href="ui-buttons.html#" class="dropdown-toggle avatar"><img src="" class="avatar-current"></a></li>
-				<li><a href="#"><i class="currentlike fa fa-thumbs-up" id="like"></i></a></li>
-				<li><a href="#"><i class="currentunlike fa fa-thumbs-down" id="unlike"></i></a></li>
+					<li>
+						<a href="ui-buttons.html#" class="dropdown-toggle avatar">
+							<img src="" class="avatar-current">
+						</a>
+					</li>
+					{{#if Islike}}
+						<li>
+							<a href="#" id="currentlike">
+								<i class="fa fa-thumbs-up like" id="like"></i>
+							</a>
+						</li>
+					{{else}}
+						<li>
+							<a href="#" id="currentlike">
+								<i class="fa fa-thumbs-up" id="like"></i>
+							</a>
+						</li>
+					{{/if}}
+					{{#if Isunlike}}
+						<li>
+							<a href="#" id="currentunlike">
+								<i class="fa fa-thumbs-down like" id="unlike"></i>
+							</a>
+						</li>
+					{{else}}
+						<li>
+							<a href="#" id="currentunlike">
+								<i class="fa fa-thumbs-down" id="unlike"></i>
+							</a>
+						</li>
+					{{/if}}
 			</ul>
 			<form class="navbar-form navbar-left">		
 					<!--<input class="form-control" placeholder="Search for Music title, Production , Albums ... " type="text" id="singerval">	

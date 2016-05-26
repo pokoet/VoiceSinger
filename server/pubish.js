@@ -25,6 +25,9 @@ Meteor.publish(null, function (){
 Meteor.publish("musicsListfavorite", function(){
 	return musics.find({});
 });
+Meteor.publish("review", function(){
+	return review.find({});
+});
 
 
 

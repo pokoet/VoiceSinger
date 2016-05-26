@@ -70,32 +70,17 @@ unSlugName = function(title){
     return title;
 }
 
-Getfavorite = function(){
-    var userid = Meteor.userId();
-    var mId = Session.get('MUSIC-ID');
-    var heartempty = '';
-    var heartfull = '';
-    var fav = favorite.findOne({ musicId: mId, userId: userid });
-    if (typeof fav !== 'undefined') {
-        heartempty = 'nonelike';
-        heartfull = '';
-    } else {
-        heartempty = '';
-        heartfull = 'nonelike';
+Getproduction = function(){
+    var musicid = Session.get('DATA-ID');
+    var re = musics.findOne({'_id':musicid});
+    var pro = production.findOne({'_id':re.production}).title;
+    var album = production.findOne({'_id':re.albums}).title;
+    var obj = {
+        mypro:pro,
+        myalbum:album
     }
-    var html = '';
-    html += '<button type="button" class="btn btn-link unfav ' + heartempty + '" data-fav="">';
-        html += '<i class="fa fa-heart"></i>';
-    html += '</button>';
-    html += '<button type="button" class="btn btn-link fav ' + heartfull + '" data-fav="">';
-        html += '<i class="fa fa-heart-o"></i>';
-    html += '</button>';
-   // html += '<a href="#" data-id="' + productId + '" class="heart pull-right ' + heartempty + ' unlike unlike' + productId + '"><span class="fa fa-heart-o"></span></a>';
-    //html += '<a href="#" data-id="' + productId + '" class="heart pull-right ' + heartfull + ' like like' + productId + '"><span class="fa fa-heart fa-heart-full"></span></a>';
-    return html;
+    return obj;
 }
-Template.registerHelper('Getfavorite', function(productId) {
-    if (productId) {
-        return Getfavorite(productId);
-    }
+Template.registerHelper('Getproduction', function() {
+    return Getproduction;
 });

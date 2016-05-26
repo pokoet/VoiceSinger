@@ -75,3 +75,9 @@ a, a:link, a:visited, a:hover, a:active{text-decoration:none}
 	margin-bottom: 10px;
 }
 .nonelike{display: none}
+
+.modal-body .list-comments {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

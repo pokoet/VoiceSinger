@@ -10,17 +10,40 @@
 					<p id="errormsg" style="color:red"></p>
 			  	</div>
 			  	<div class="modal-body">
-					<textarea class="form-control" rows="3" id="comment" placeholder="Enter your comment..."></textarea>
+					<div class="list-comments">
+						<ul class="media-list">
+							{{#each getcomment}}
+								
+								<p></p>
+							
+							<li class="media">
+								<div class="media-body">
+									<div class="media">
+										<a class="pull-left" href="#">
+											<img class="media-object img-rounded " src="/img/icons/user.gif" />
+										</a>
+										<div class="media-body" >
+											{{text}}
+											<br />
+										   <small class="text-muted">{{commentUser userId}} | 23rd June at 5:00pm</small>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+							{{/each}}
+						</ul>
+					</div>
 			  	</div>
-			  	<div>
-			  		{{#each getcomment}}
-			  			<b>User: {{commentUser userId}}</b>
-			  			<p>{{text}}</p>
-			  		{{/each}}
-			  	</div>
+			  
 			  	<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-default" id="send">Send</button>
+					<div class="input-group  disabled">
+						<input class="form-control" placeholder="Enter Message" type="text" id="comment">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" id="send">SEND</button>
+						</span>
+					</div>
+					
 			  	</div>
 			</div>
 	  	</div>

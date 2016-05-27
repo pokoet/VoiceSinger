@@ -133,6 +133,7 @@ Template.mainLayout.events({
 		var musId = Session.get("MUSICID-COMMENT");
 		//alert(com+user+musId);
 		var now = Date.now();
+		var text = '';
 		var obj = {
 			text:com,
 			musicId:musId,
@@ -150,10 +151,18 @@ Template.mainLayout.events({
 					}
 				});
 			}else{
-				$("#errormsg").text('Please Login First Before Comment');
+				text += '<div class="alert alert-danger fade in">';
+					text += '<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>';
+					text += '<strong>Please Login!</strong> This alert box indicates a dangerous or potentially negative action.';
+				text += '</div>';
+				$("#errormsg").html(text);
 			}
 		}else{
-			$("#errormsg").text('comment Can not be empty');
+			text += '<div class="alert alert-danger fade in">';
+				text += '<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>';
+				text += '<strong>Text can not be empty!</strong> This alert box indicates a dangerous or potentially negative action.';
+			text += '</div>';
+			$("#errormsg").html(text);
 		}
 	}
 });

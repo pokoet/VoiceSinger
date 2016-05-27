@@ -15,7 +15,7 @@ Template.musicpro.helpers({
 	getcomment:function(){
 		var id = Session.get("MUSICID-COMMENT");
 		if(id){
-			return review.find({musicId:id});
+			return review.find({musicId:id},{sort:{timestart:-1}});
 		}
 	},
 	commentUser:function(user){
